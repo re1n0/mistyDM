@@ -1,0 +1,42 @@
+[package]
+name = "misty"
+version = "0.1.0"
+authors = ["rein <rein@rein.icu>"]
+edition = "2024"
+description = "GTK4 dynamic menu + app launcher"
+
+[dependencies]
+arc-swap = "1.7.1"
+const-str = "0.6.4"
+directories = "6.0.0"
+freedesktop-desktop-entry = "0.7.14"
+fuzzy-matcher = "0.3.7"
+lazy_static = "1.5.0"
+rust-i18n = "3.1.5"
+serde = "1.0.219"
+serde-inline-default = "0.2.3"
+smol = "2.0.2"
+toml = "0.9.5"
+xdg-utils = "0.4.0"
+
+[dependencies.gtk]
+version = "0.9.6"
+features = ["gio_v2_80", "v4_18"]
+package = "gtk4"
+
+[dependencies.gtk-layer-shell]
+version = "0.5.0"
+package = "gtk4-layer-shell"
+
+[profile.dev]
+lto = "off"
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
+
+[profile.release.package."*"]
+opt-level = 3
+
+[profile.release.build-override]
+opt-level = 3
