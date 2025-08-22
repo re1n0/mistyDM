@@ -1,6 +1,7 @@
 use directories::ProjectDirs;
 use std::path::PathBuf;
-pub mod desktop_entries;
+pub mod apps;
+pub mod history;
 
 fn get_proj_dirs() -> ProjectDirs {
     ProjectDirs::from(
@@ -13,4 +14,8 @@ fn get_proj_dirs() -> ProjectDirs {
 
 pub fn get_config_file(file: &str) -> PathBuf {
     get_proj_dirs().config_dir().join(file)
+}
+
+pub fn get_cached_file(file: &str) -> PathBuf {
+    get_proj_dirs().cache_dir().join(file)
 }

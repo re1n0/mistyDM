@@ -3,6 +3,7 @@ pub const APP_NAME: &str = "misty";
 
 pub const CONFIG_FILE: &str = "config.toml";
 pub const KEYMAP_FILE: &str = "keymap.toml";
+pub const HISTORY_FILE: &str = "launch_history";
 
 pub const ROOT_BOX_CLASS: &str = "box";
 pub const SEARCH_ENTRY_CLASS: &str = "search";
